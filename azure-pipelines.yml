@@ -15,3 +15,9 @@ steps:
   inputs:
     command: login
     containerRegistry: DockerRegistry
+- task: Docker@2
+  displayName: Build and Push
+  inputs:
+    command: buildAndPush
+    repository: kennygonsalves/server
+    tags: latest
