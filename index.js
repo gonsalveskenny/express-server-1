@@ -22,6 +22,10 @@ app.get('/brothers', (req, res) => {
   res.send('Hello KenJas!')
 })
 
+app.get('/update', (req, res) => {
+  res.send('Hello to Latest Version!')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
