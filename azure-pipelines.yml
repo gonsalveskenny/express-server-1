@@ -30,4 +30,6 @@ steps:
   displayName: Save image
   inputs:
     targetType: inline
-    script: docker save ***/server --output $(Build.ArtifactStagingDirectory)/server.tar
+    script: |
+      docker images
+      docker save ***/server --output $(Build.ArtifactStagingDirectory)/server.tar
