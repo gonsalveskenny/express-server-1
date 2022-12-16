@@ -27,7 +27,7 @@ app.get('/update', (req, res) => {
 })
 
 app.get('/release', (req, res) => {
-  res.send('Hello to Latest Release-1!')
+  res.send('Hello to Latest Release-2!')
 })
 
 app.listen(port, () => {
