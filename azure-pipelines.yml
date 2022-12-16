@@ -26,4 +26,4 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      docker save MY_DOCKER_REPO_IMAGE_NAME:$(tag) -o $(Pipeline.Workspace)/MY_IMAGE_FILE.tar
+      docker save server:latest -o $(Pipeline.Workspace)/server.tar
