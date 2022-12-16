@@ -21,3 +21,6 @@ steps:
     command: buildAndPush
     repository: kennygonsalves/server
     tags: latest
+- task: CmdLine@2
+  inputs:
+    script: 'docker images'
