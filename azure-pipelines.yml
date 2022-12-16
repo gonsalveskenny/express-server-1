@@ -29,3 +29,14 @@ steps:
     command: push
     repository: kennygonsalves/server
     tags: $(Build.BuildId)
+- task: Bash@3
+  displayName: Save Docker Image
+  inputs:
+    targetType: 'inline'
+    script: |
+      docker save **/server:$(Build.BuildId) -o $(Pipeline.Workspace)/server.tar
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)/server.tar'
+    artifact: 'MY_ARTIFACT'
+    publishLocation: 'pipeline'
