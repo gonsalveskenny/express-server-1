@@ -23,4 +23,4 @@ steps:
     tags: latest
 - task: CmdLine@2
   inputs:
-    script: 'docker image save server:$(Build.BuildId) -o $(Build.ArtifactStagingDirectory)/imagetest.tar'
+    script: 'docker image save kennygonsalves/server:$(Build.BuildId) -o $(Build.ArtifactStagingDirectory)/imagetest.tar'
