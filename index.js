@@ -26,6 +26,10 @@ app.get('/update', (req, res) => {
   res.send('Hello to Latest Version!')
 })
 
+app.get('/release', (req, res) => {
+  res.send('Hello to Latest Release!')
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
