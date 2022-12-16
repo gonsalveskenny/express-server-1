@@ -21,6 +21,9 @@ steps:
     command: buildAndPush
     repository: kennygonsalves/server
     tags: latest
-- task: CmdLine@2
+- task: Bash@3
+  displayName: Save Docker Image
   inputs:
-    script: 'docker image save kennygonsalves/server:$(Build.BuildId) -o $(Build.ArtifactStagingDirectory)/imagetest.tar'
+    targetType: 'inline'
+    script: |
+      docker save MY_DOCKER_REPO_IMAGE_NAME:$(tag) -o $(Pipeline.Workspace)/MY_IMAGE_FILE.tar
